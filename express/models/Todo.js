@@ -12,10 +12,10 @@ export const Todo = sequelize.define(
       defaultValue: false,
     },
     createdAt: {
-      type: DataTypes.DATE,
+      type: DataTypes.BIGINT,
       field: "created_at",
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: () => Date.now(),
     },
   },
   {

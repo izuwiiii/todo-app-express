@@ -34,7 +34,7 @@ app.patch("/todos/:id", async (req, res) => {
 
 app.delete("/todos/:id", async (req, res) => {
   await todoService.remove(req.params.id);
-  // res.json(await getAll());
+
   res.status(200).json(await todoService.getAll());
 });
 

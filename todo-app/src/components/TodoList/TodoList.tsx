@@ -37,7 +37,6 @@ export const TodoList: React.FC<TodoListProps> = ({
         {filteredTodos?.map(todo => (
           <CSSTransition key={todo.id} timeout={300} classNames="item">
             <Todo
-              // key={todo.id}
               todo={todo}
               isLoading={isLoading}
               handleDeleteTodo={handleDeleteTodo}

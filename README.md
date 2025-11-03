@@ -4,9 +4,11 @@ A simple and functional ToDo application built with React and TypeScript. It all
 
 ## 🔗 Live Demo
 
-[View Demo](https://izuwiiii.github.io/todo-app/)
+[View Demo](https://izuwiiii.github.io/todo-app-express/)
 
 ## 🛠 Technologies Used
+
+Frontend:
 
 - React
 - TypeScript
@@ -14,37 +16,58 @@ A simple and functional ToDo application built with React and TypeScript. It all
 - BEM Methodology
 - REST API
 
+Backend:
+
+- NODE.JS
+- EXPRESS
+- SEQUELIZE
+
 ## 📦 Project Setup
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/izuwiiii/todo-app
+git clone https://github.com/izuwiiii/todo-app-express
 ```
+
 Navigate into the project folder:
+
 ```bash
 cd your-repo-name
 ```
+
 Install dependencies:
+
 ```bash
 npm install
 ```
-Start the development server:
+
+Start the frontend:
+
 ```bash
 npm start
 ```
+
+Start the backend server:
+
+```bash
+cd express
+npm install
+npm start
+```
+
 The app will be available at http://localhost:5173 (or similar, depending on your setup).
 
 Features
-  - Add new tasks
 
-  - Edit existing tasks
+- Add new tasks
 
-  - Delete tasks
+- Edit existing tasks
 
-  - Mark tasks as completed or active
+- Delete tasks
 
-  - All task actions are synced with an API
+- Mark tasks as completed or active
 
-  - Responsive UI with SCSS (BEM)
+- All task actions are synced with an API
 
+- Responsive UI with SCSS (BEM)

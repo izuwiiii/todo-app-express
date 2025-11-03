@@ -5,7 +5,7 @@ export const getTodos = () => {
   return client.get<TodoType[]>(`/todos`);
 };
 
-export const postTodo = (newTodo: Omit<TodoType, 'id'>) => {
+export const postTodo = (newTodo: Omit<TodoType, 'id' | 'createdAt'>) => {
   return client.post<TodoType>(`/todos`, newTodo);
 };
 

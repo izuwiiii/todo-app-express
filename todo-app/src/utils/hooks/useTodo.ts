@@ -51,7 +51,12 @@ export const useTodo = () => {
       return;
     }
 
-    setTempTodo({ title: trimmedTitle, completed, id: '' });
+    setTempTodo({
+      title: trimmedTitle,
+      completed,
+      id: '',
+      createdAt: Date.now(),
+    });
     setIsLoading(true);
 
     postTodo({ title: trimmedTitle, completed })
@@ -74,6 +79,7 @@ export const useTodo = () => {
       title: query,
       id: '',
       completed: false,
+      createdAt: Date.now(),
     });
   };
 

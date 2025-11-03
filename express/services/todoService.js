@@ -9,7 +9,7 @@ export const todoService = {
       completed,
     };
   },
-  getAll: async () => await Todo.findAll({ order: [["created_at"]] }),
+  getAll: async () => await Todo.findAll({ order: [["createdAt"]] }),
   getById: async (id) => Todo.findByPk(id),
   create: (title) => {
     const id = uuidv4();
