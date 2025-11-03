@@ -36,18 +36,15 @@ Navigate into the project folder:
 cd todo-app-express
 ```
 
-Install dependencies:
-
-```bash
-npm install
-```
-
 Start the frontend:
 
 ```bash
+cd todo-app
+npm install
 npm start
 ```
 
+In new terminal
 Start the backend server:
 
 ```bash
