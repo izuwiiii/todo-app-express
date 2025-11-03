@@ -15,6 +15,14 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "ok",
+    message: "Todo API is running",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.get("/todos", async (req, res) => {
   const todos = await todoService.getAll();
 
