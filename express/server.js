@@ -55,6 +55,24 @@ app.delete("/todos/:id", async (req, res) => {
   res.status(200).json(await todoService.getAll());
 });
 
-app.listen(Number(process.env.PORT) || 3000, "0.0.0.0", () => {
-  console.log("Server is now running!");
-});
+const PORT = process.env.PORT || 8080;
+
+async function start() {
+  try {
+    console.log("Connecting to DB");
+    await sequelize.authenticate();
+    console.log("Database connected");
+
+    await sequelize.sync();
+    console.log("Database synchronized");
+
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error("Failed to start:", err);
+    process.exit(1);
+  }
+}
+
+start();
