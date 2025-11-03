@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const BASE_URL = 'http://todo-app-express-production-77e1.up.railway.app';
+const BASE_URL = 'https://todo-app-express-production-77e1.up.railway.app/';
 
 // To have autocompletion and avoid mistypes
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
