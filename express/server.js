@@ -1,17 +1,15 @@
 import express from "express";
 import cors from "cors";
 import { todoService } from "./services/todoService.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "https://izuwiiii.github.io",
-      "https://izuwiiii.github.io/todo-app-express",
-      "http://localhost:5173",
-      "http://localhost:3000",
-    ],
+    origin: "*",
     credentials: true,
   })
 );
