@@ -55,26 +55,6 @@ app.delete("/todos/:id", async (req, res) => {
   res.status(200).json(await todoService.getAll());
 });
 
-async function startServer() {
-  try {
-    console.log("Environment:", process.env.NODE_ENV || "development");
-    console.log("Port:", PORT);
-    console.log("Database URL exists:", !!process.env.DATABASE_URL);
-
-    console.log("Connecting to database...");
-    await sequelize.authenticate();
-    console.log("Database connected successfully");
-
-    await sequelize.sync();
-    console.log("Database synchronized");
-
-    app.listen(Number(process.env.PORT) || 3000, "0.0.0.0", () => {
-      console.log("Server is now running!");
-    });
-  } catch (error) {
-    console.error("Failed to start server:", error);
-    process.exit(1);
-  }
-}
-
-startServer();
+app.listen(Number(process.env.PORT) || 3000, "0.0.0.0", () => {
+  console.log("Server is now running!");
+});
