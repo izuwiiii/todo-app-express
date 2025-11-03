@@ -14,13 +14,13 @@ Frontend:
 - TypeScript
 - SCSS
 - BEM Methodology
-- REST API
 
 Backend:
 
 - NODE.JS
 - EXPRESS
 - SEQUELIZE
+- REST API
 
 ## 📦 Project Setup
 

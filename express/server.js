@@ -1,10 +1,15 @@
 import express from "express";
 import cors from "cors";
-import { todoService } from "./services/TodoService.js";
+import { todoService } from "./services/todoService.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.get("/todos", async (req, res) => {
   const todos = await todoService.getAll();
