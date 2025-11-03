@@ -1,6 +1,6 @@
 # ToDo App
 
-A simple and functional ToDo application built with React and TypeScript. It allows users to add, edit, delete, and toggle tasks as completed or active. All actions are synchronized with an external API. The app is styled using SCSS and follows the BEM methodology for maintainable and scalable code.
+A simple and functional ToDo application built with React and TypeScript for the frontend and Node.js + Express + Sequelize for the backend. Users can add, edit, delete, and toggle tasks as completed or active. All actions are synchronized with an external API. The app is styled using SCSS and follows the BEM methodology for maintainable and scalable code.
 
 ## 🔗 Live Demo
 
@@ -33,7 +33,7 @@ git clone https://github.com/izuwiiii/todo-app-express
 Navigate into the project folder:
 
 ```bash
-cd your-repo-name
+cd todo-app-express
 ```
 
 Install dependencies:
@@ -56,7 +56,7 @@ npm install
 npm start
 ```
 
-The app will be available at http://localhost:5173 (or similar, depending on your setup).
+The app will be available at http://localhost:5173
 
 Features
 
