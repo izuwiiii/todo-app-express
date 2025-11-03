@@ -59,18 +59,31 @@ const PORT = process.env.PORT || 3000;
 
 async function startServer() {
   try {
-    console.log("Connecting to database");
+    console.log("Environment:", process.env.NODE_ENV || "development");
+    console.log("Port:", PORT);
+    console.log("Database URL exists:", !!process.env.DATABASE_URL);
+
+    console.log("Connecting to database...");
     await sequelize.authenticate();
-    console.log("Database connected");
+    console.log("Database connected successfully");
 
     await sequelize.sync();
     console.log("Database synchronized");
 
-    app.listen(PORT, "0.0.0.0", () => {
-      console.log(`Server running on port ${PORT}`);
+    const server = app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server is running on 0.0.0.0:${PORT}`);
+    });
+
+    process.on("SIGTERM", () => {
+      console.log("SIGTERM received, closing server...");
+      server.close(() => {
+        console.log("Server closed");
+        sequelize.close();
+        process.exit(0);
+      });
     });
   } catch (error) {
-    console.error("Failed to start:", error);
+    console.error("Failed to start server:", error);
     process.exit(1);
   }
 }
